@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package io.eCare.models;
 
 import org.bson.types.ObjectId;
@@ -10,7 +5,7 @@ import org.springframework.data.annotation.Id;
 
 /**
  *
- * @author Aluno
+ * @author Gabriel Leme
  */
 public class Consumers {
 
