@@ -2,11 +2,13 @@ package io.eCare.models;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Gabriel Leme
  */
+@Component
 public class Consumers {
 
     @Id
