@@ -36,8 +36,8 @@ public class ConsumersController {
 
 //
     @PostMapping("/login")
-    public Consumers consumerLogin(@RequestBody Consumers consumers) {
-        return consumers;
+    public Consumers consumerLogin() {
+        return consumersRepository.makeLogin();
     }
 
 }

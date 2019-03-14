@@ -16,8 +16,8 @@ public interface ConsumersRepository extends MongoRepository<Consumers, String> 
     Consumers findBy_id(ObjectId _id);
 
     @Query("{$and: ["
-            + "{'email': ?0}, "
-            + "{'password': ?0} "
+            + "{'email': 'test@eCare.io'}, "
+            + "{'password': 'test'} "
             + "]}")
-    Consumers findByConsumers(String email, String password);
+    Consumers makeLogin();
 }
