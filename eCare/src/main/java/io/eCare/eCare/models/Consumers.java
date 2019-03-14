@@ -1,4 +1,4 @@
-package io.eCare.models;
+package io.eCare.eCare.models;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;

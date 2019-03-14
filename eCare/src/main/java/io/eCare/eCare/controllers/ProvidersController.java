@@ -1,7 +1,7 @@
-package io.eCare.controllers;
+package io.eCare.eCare.controllers;
 
-import io.eCare.models.Providers;
-import io.eCare.repositories.ProvidersRepository;
+import io.eCare.eCare.models.Providers;
+import io.eCare.eCare.repositories.ProvidersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
