@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @author Gabriel Leme
  */
 @RestController
-@RequestMapping("/api/consumers")
+@RequestMapping("/consumers")
 public class ConsumersController {
 
     @Autowired
@@ -33,11 +33,11 @@ public class ConsumersController {
     public Consumers getConsumerById(@PathVariable("id") ObjectId id) {
         return consumersRepository.findBy_id(id);
     }
-    
+
 //
-//    @PostMapping("/login")
-//    public Consumers consumerLogin(@RequestBody Consumers consumers) {
-//        return consumers;
-//    }
+    @PostMapping("/login")
+    public Consumers consumerLogin(@RequestBody Consumers consumers) {
+        return consumers;
+    }
 
 }
