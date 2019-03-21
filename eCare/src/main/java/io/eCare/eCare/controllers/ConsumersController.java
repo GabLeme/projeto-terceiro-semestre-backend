@@ -36,8 +36,8 @@ public class ConsumersController {
 
 //
     @PostMapping("/login")
-    public Consumers consumerLogin() {
-        return consumersRepository.makeLogin();
+    public Consumers consumerLogin(@RequestBody String email, String password) {
+        return consumersRepository.makeLogin(email, password);
     }
 
 }

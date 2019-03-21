@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
+
 /**
  *
  * @author Gabriel Leme
@@ -16,8 +17,8 @@ public interface ConsumersRepository extends MongoRepository<Consumers, String> 
     Consumers findBy_id(ObjectId _id);
 
     @Query("{$and: ["
-            + "{'email': 'test@eCare.io'}, "
-            + "{'password': 'test'} "
+            + "{'email': ?0}, "
+            + "{'password': ?0} "
             + "]}")
-    Consumers makeLogin();
+    Consumers makeLogin(String email, String password);
 }
