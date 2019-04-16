@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author Gabriel Leme
+ * @author Gabriel 
  */
 @Repository
 public interface ConsumersRepository extends MongoRepository<Consumers, String> {

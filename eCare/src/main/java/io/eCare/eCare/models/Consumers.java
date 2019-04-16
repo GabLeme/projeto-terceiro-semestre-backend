@@ -2,13 +2,14 @@ package io.eCare.eCare.models;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Gabriel Leme
  */
-@Component
+@Document(collection = "consumers")
 public class Consumers {
 
     @Id
