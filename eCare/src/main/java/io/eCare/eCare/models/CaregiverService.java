@@ -5,6 +5,7 @@
  */
 package io.eCare.eCare.models;
 
+import javax.annotation.Generated;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -24,14 +25,6 @@ public class CaregiverService {
 
     public String getDescription() {
         return description;
-    }
-
-    public ObjectId getId() {
-        return _id;
-    }
-
-    public void setId(ObjectId _id) {
-        this._id = _id;
     }
 
     public void setDescription(String description) {

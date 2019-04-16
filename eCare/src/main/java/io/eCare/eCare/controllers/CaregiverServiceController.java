@@ -33,8 +33,6 @@ public class CaregiverServiceController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public CaregiverService createCareGiveService(@RequestBody CaregiverService Service) {
-
-        Service.setId(ObjectId.get());
         CarerGiveServiceRepository.save(Service);
         return Service;
     }
