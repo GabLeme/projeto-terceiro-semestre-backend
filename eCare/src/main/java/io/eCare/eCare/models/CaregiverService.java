@@ -14,14 +14,25 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author Aluno
  */
-
 @Document(collection = "caregiverService")
 public class CaregiverService {
 
     @Id
-    private ObjectId _id;
-    private String description, subtitle, title;
-    private int value;
+    public ObjectId _id;
+    public String description, subtitle, title;
+    public int value;
+
+    public CaregiverService(ObjectId _id, String Title, String description, String subtitle, String title, int value) {
+        this._id = _id;
+        this.title = Title;
+        this.subtitle = subtitle;
+        this.description = description;
+        this.value = value;
+    }
+
+    public String get_id() {
+        return _id.toHexString();
+    }
 
     public String getDescription() {
         return description;
@@ -47,22 +58,6 @@ public class CaregiverService {
         this.title = title;
     }
 
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
-
     public CaregiverService() {
-    }
-
-    public CaregiverService(ObjectId _id, String Title, String description, String subtitle, String title, int value) {
-        this._id = _id;
-        this.title = Title;
-        this.subtitle = subtitle;
-        this.description = description;
-        this.value = value;
     }
 }

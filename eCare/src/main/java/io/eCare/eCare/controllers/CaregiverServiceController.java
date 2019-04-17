@@ -6,13 +6,10 @@
 package io.eCare.eCare.controllers;
 
 import io.eCare.eCare.models.CaregiverService;
-import io.eCare.eCare.models.Consumers;
-import io.eCare.eCare.repositories.ConsumersRepository;
 import java.util.List;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

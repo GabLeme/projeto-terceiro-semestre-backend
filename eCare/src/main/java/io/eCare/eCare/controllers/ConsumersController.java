@@ -34,7 +34,6 @@ public class ConsumersController {
         return consumersRepository.findBy_id(id);
     }
 
-//
     @PostMapping("/login")
     public Consumers consumerLogin(@RequestBody String email, String password) {
         return consumersRepository.makeLogin(email, password);
