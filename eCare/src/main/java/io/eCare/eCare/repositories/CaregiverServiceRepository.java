@@ -7,11 +7,8 @@ package io.eCare.eCare.repositories;
 
 import io.eCare.eCare.models.CaregiverService;
 
-import io.eCare.eCare.controllers.CaregiverServiceController;
-import io.eCare.eCare.models.CaregiverService;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**

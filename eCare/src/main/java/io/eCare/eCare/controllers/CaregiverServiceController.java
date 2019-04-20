@@ -6,14 +6,11 @@
 package io.eCare.eCare.controllers;
 
 import io.eCare.eCare.models.CaregiverService;
+
 import java.util.List;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import io.eCare.eCare.repositories.CaregiverServiceRepository;
 
 @RestController
@@ -34,9 +31,13 @@ public class CaregiverServiceController {
         return Service;
     }
 
+
+
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public CaregiverService getConsumerById(@PathVariable("id") ObjectId id) {
         return CarerGiveServiceRepository.findBy_id(id);
     }
 
 }
+
