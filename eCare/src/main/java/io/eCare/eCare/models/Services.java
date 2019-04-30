@@ -5,7 +5,6 @@
  */
 package io.eCare.eCare.models;
 
-import javax.annotation.Generated;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -14,18 +13,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author Aluno
  */
-@Document(collection = "caregiverService")
-public class CaregiverService {
+@Document(collection = "services")
+public class Services {
 
     @Id
     public ObjectId _id;
-    public String description, subtitle, title;
+    public String description, category, title;
     public int value;
+    
 
-    public CaregiverService(ObjectId _id, String Title, String description, String subtitle, String title, int value) {
+    public Services(ObjectId _id, String Title, String description, String category, String title, int value) {
         this._id = _id;
         this.title = Title;
-        this.subtitle = subtitle;
+        this.category = category;
         this.description = description;
         this.value = value;
     }
@@ -43,11 +43,11 @@ public class CaregiverService {
     }
 
     public String getSubtitle() {
-        return subtitle;
+        return category;
     }
 
-    public void setSubtitle(String subtitle) {
-        this.subtitle = subtitle;
+    public void setSubtitle(String category) {
+        this.category = category;
     }
 
     public String getTitle() {
@@ -58,6 +58,6 @@ public class CaregiverService {
         this.title = title;
     }
 
-    public CaregiverService() {
+    public Services() {
     }
 }

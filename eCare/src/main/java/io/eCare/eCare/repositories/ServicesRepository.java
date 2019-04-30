@@ -5,10 +5,11 @@
  */
 package io.eCare.eCare.repositories;
 
-import io.eCare.eCare.models.CaregiverService;
+import io.eCare.eCare.models.Services;
 
-import io.eCare.eCare.controllers.CaregiverServiceController;
-import io.eCare.eCare.models.CaregiverService;
+import io.eCare.eCare.controllers.ServicesController;
+import io.eCare.eCare.models.Services;
+import java.util.List;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
@@ -19,8 +20,11 @@ import org.springframework.stereotype.Repository;
  * @author Eu
  */
 @Repository
-public interface CaregiverServiceRepository extends MongoRepository<CaregiverService, String> {
+public interface ServicesRepository extends MongoRepository<Services, String> {
 
-    CaregiverService findBy_id(ObjectId _id);
+    Services findBy_id(ObjectId _id);
+
+    @Query("{ 'category' : ?0 }")
+    List<Services> getByCategory(String category);
 
 }
