@@ -14,16 +14,45 @@ public class Providers {
 
     @Id
     public ObjectId _id;
+    public String firstName;
+    public String lastName;
     public String email;
     public String password;
+    public String cellPhone;
 
     public Providers() {
     }
 
-    public Providers(ObjectId _id, String email, String password) {
-        this._id = _id;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getCellPhone() {
+        return cellPhone;
+    }
+
+    public void setCellPhone(String cellPhone) {
+        this.cellPhone = cellPhone;
+    }
+
+    public Providers(String firstName, String lastName, String email, String password, String cellPhone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.cellPhone = cellPhone;
     }
 
     public String get_id() {

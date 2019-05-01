@@ -16,14 +16,33 @@ public class Consumers {
     public ObjectId _id;
     public String email;
     public String password;
+    public String firstName;
+    public String lastName;
 
     public Consumers() {
     }
 
-    public Consumers(ObjectId _id, String email, String password) {
-        this._id = _id;
+    public Consumers(String email, String password, String firstName, String lastName) {
         this.email = email;
         this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String get_id() {
