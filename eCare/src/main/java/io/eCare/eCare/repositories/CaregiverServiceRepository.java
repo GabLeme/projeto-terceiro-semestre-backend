@@ -6,9 +6,9 @@
 package io.eCare.eCare.repositories;
 
 import io.eCare.eCare.models.CaregiverService;
-
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -20,4 +20,9 @@ public interface CaregiverServiceRepository extends MongoRepository<CaregiverSer
 
     CaregiverService findBy_id(ObjectId _id);
 
+    @Query("{$and: ["
+            + "{'title': ?0}, "
+            + "{'value': ?0} "
+            + "]}")
+    CaregiverService makeLogin(String email, Integer password);
 }

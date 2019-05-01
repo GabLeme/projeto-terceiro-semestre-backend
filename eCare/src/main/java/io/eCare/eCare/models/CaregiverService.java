@@ -5,7 +5,6 @@
  */
 package io.eCare.eCare.models;
 
-import javax.annotation.Generated;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -24,7 +23,7 @@ public class CaregiverService {
 
     public CaregiverService(ObjectId _id, String Title, String description, String subtitle, String title, int value) {
         this._id = _id;
-        this.title = Title;
+        this.title = Title  ;
         this.subtitle = subtitle;
         this.description = description;
         this.value = value;

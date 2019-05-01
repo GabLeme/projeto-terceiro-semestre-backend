@@ -21,4 +21,7 @@ public interface ConsumersRepository extends MongoRepository<Consumers, String> 
             + "{'password': ?0} "
             + "]}")
     Consumers makeLogin(String email, String password);
+
+    @Override
+    <S extends Consumers> S insert(S s);
 }
