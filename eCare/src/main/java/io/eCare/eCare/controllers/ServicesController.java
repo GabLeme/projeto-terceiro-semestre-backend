@@ -24,10 +24,10 @@ public class ServicesController {
     @Autowired
     private ServicesRepository servicesRepository;
 
-//    @RequestMapping(value = "", method = RequestMethod.GET)
-//    public List<Services> GetAll() {
-//        return servicesRepository.findAll();
-//    }
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public List<Services> GetAll() {
+        return servicesRepository.findAll();
+    }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Services CreateService(@RequestBody Services Service) {
@@ -44,6 +44,10 @@ public class ServicesController {
     public List<Services> getByCategory(@RequestParam String category) {
         return servicesRepository.getByCategory(category);
     }
-    
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void deleteById(@PathVariable("id") String id) {
+        servicesRepository.deleteById(id);
+    }
 
 }

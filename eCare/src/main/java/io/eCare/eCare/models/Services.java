@@ -18,15 +18,16 @@ public class Services {
 
     @Id
     public ObjectId _id;
-    public String description, category, title;
+    public String description, category, providerName, providerEmail, providerCellphone, announcementDate;
     public int value;
-    
 
-    public Services(ObjectId _id, String Title, String description, String category, String title, int value) {
-        this._id = _id;
-        this.title = Title;
-        this.category = category;
+    public Services(String description, String category, String providerName, String providerEmail, String providerCellphone, String announcementDate, int value) {
         this.description = description;
+        this.category = category;
+        this.providerName = providerName;
+        this.providerEmail = providerEmail;
+        this.providerCellphone = providerCellphone;
+        this.announcementDate = announcementDate;
         this.value = value;
     }
 
@@ -50,12 +51,36 @@ public class Services {
         this.category = category;
     }
 
-    public String getTitle() {
-        return title;
+    public String getProviderName() {
+        return providerName;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setProviderName(String providerName) {
+        this.providerName = providerName;
+    }
+
+    public String getProviderEmail() {
+        return providerEmail;
+    }
+
+    public void setProviderEmail(String providerEmail) {
+        this.providerEmail = providerEmail;
+    }
+
+    public String getProviderCellphone() {
+        return providerCellphone;
+    }
+
+    public void setProviderCellphone(String providerCellphone) {
+        this.providerCellphone = providerCellphone;
+    }
+
+    public String getAnnouncementDate() {
+        return announcementDate;
+    }
+
+    public void setAnnouncementDate(String announcementDate) {
+        this.announcementDate = announcementDate;
     }
 
     public Services() {
