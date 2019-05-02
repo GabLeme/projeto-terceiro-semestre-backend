@@ -17,4 +17,5 @@ public interface ConsumersRepository extends MongoRepository<Consumers, String> 
 
     @Query("{'email' : ?0, password : ?1}")
     Consumers findByEmailAndPassword(String email, String password);
+    
 }

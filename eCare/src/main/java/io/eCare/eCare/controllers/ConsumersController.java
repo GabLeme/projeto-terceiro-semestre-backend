@@ -42,8 +42,9 @@ public class ConsumersController {
     }
 
     @PostMapping("/")
-    public Consumers createProvider(@RequestBody Consumers consumer) {
+    public Consumers createConsumer(@RequestBody Consumers consumer) {
         return consumersRepository.save(consumer);
     }
+   
 
 }
