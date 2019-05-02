@@ -41,6 +41,11 @@ public class ConsumersController {
         return consumersRepository.findByEmailAndPassword(email, password);
     }
 
+    @PostMapping("/Validation")
+    public Consumers consumerLogin(@RequestParam String email) {
+        return consumersRepository.ValidationExists(email);
+    }
+
     @PostMapping("/")
     public Consumers createProvider(@RequestBody Consumers consumer) {
         return consumersRepository.save(consumer);
