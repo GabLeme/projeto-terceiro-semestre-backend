@@ -1,7 +1,7 @@
 package io.eCare.eCare.controllers;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.eCare.eCare.models.Consumers;
-import io.eCare.eCare.models.Providers;
 import io.eCare.eCare.repositories.ConsumersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,9 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import org.bson.types.ObjectId;
 import java.util.List;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -45,6 +49,16 @@ public class ConsumersController {
     public Consumers createConsumer(@RequestBody Consumers consumer) {
         return consumersRepository.save(consumer);
     }
-   
+
+    @GetMapping(value = "/exists", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResponseEntity<String> exists(@RequestParam String email) {
+        Consumers userWithThisEmail = consumersRepository.findByEmail(email);
+        if (userWithThisEmail != null) {
+            return ResponseEntity.ok().body("true");
+        } else {
+            return ResponseEntity.ok().body("false");
+        }
+    }
 
 }
