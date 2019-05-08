@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import io.eCare.eCare.repositories.ServicesRepository;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
 @RequestMapping("/api/services")
@@ -24,29 +27,34 @@ public class ServicesController {
     @Autowired
     private ServicesRepository servicesRepository;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @GetMapping("/")
     public List<Services> GetAll() {
         return servicesRepository.findAll();
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @PostMapping
     public Services CreateService(@RequestBody Services Service) {
         servicesRepository.save(Service);
         return Service;
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @GetMapping("/{id}")
     public Services GetById(@PathVariable("id") ObjectId id) {
         return servicesRepository.findBy_id(id);
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    public List<Services> getByCategory(@RequestParam String category) {
+    @GetMapping
+    public List<Services> GetByCategory(@RequestParam String category) {
         return servicesRepository.getByCategory(category);
     }
+    
+    @GetMapping("/filter")
+    public List<Services> FilterByValue(@RequestParam int value, String category){
+        return servicesRepository.filterByValue(value, category);
+    }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteById(@PathVariable("id") String id) {
+    @DeleteMapping("/{id}")
+    public void DeleteById(@PathVariable("id") String id) {
         servicesRepository.deleteById(id);
     }
 

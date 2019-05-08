@@ -18,15 +18,25 @@ public class Consumers {
     public String password;
     public String firstName;
     public String lastName;
+    public String photo;
 
     public Consumers() {
     }
 
-    public Consumers(String email, String password, String firstName, String lastName) {
+    public Consumers(String email, String password, String firstName, String lastName, String photo) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.photo = photo;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getFirstName() {

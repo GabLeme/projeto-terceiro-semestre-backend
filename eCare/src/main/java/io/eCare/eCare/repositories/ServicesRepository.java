@@ -27,4 +27,6 @@ public interface ServicesRepository extends MongoRepository<Services, String> {
     @Query("{ 'category' : ?0 }")
     List<Services> getByCategory(String category);
 
+    @Query("{ 'value' : { $lte: ?0 } , 'category': ?1}")
+    List<Services> filterByValue(int value, String category);
 }
