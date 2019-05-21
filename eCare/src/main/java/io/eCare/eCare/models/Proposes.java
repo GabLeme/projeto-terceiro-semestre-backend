@@ -33,10 +33,6 @@ public class Proposes {
         return _id.toHexString();
     }
 
-    public void setId(ObjectId _id) {
-        this._id = _id;
-    }
-
     public String getSenderEmail() {
         return senderEmail;
     }
