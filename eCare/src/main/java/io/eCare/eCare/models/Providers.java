@@ -19,6 +19,7 @@ public class Providers {
     public String email;
     public String password;
     public String cellPhone;
+    public String photo;
 
     public Providers() {
     }
@@ -47,12 +48,21 @@ public class Providers {
         this.cellPhone = cellPhone;
     }
 
-    public Providers(String firstName, String lastName, String email, String password, String cellPhone) {
+    public Providers(String firstName, String lastName, String email, String password, String cellPhone, String photo) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.cellPhone = cellPhone;
+        this.photo = photo;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String get_id() {

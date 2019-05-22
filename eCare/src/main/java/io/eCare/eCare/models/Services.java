@@ -20,6 +20,7 @@ public class Services {
     public ObjectId _id;
     public String description, category, providerName, providerEmail, providerCellphone, announcementDate;
     public int value;
+    public int totalStars;
 
     public Services(String description, String category, String providerName, String providerEmail, String providerCellphone, String announcementDate, int value) {
         this.description = description;
@@ -29,6 +30,15 @@ public class Services {
         this.providerCellphone = providerCellphone;
         this.announcementDate = announcementDate;
         this.value = value;
+        this.totalStars = 0;
+    }
+    
+    public int getTotalStars(){
+        return this.totalStars;
+    }
+    
+    public void setTotalStars(int totalStars){
+        this.totalStars = totalStars;
     }
 
     public String get_id() {

@@ -47,15 +47,26 @@ public class ServicesController {
     public List<Services> GetByCategory(@RequestParam String category) {
         return servicesRepository.getByCategory(category);
     }
-    
+
     @GetMapping("/filter")
-    public List<Services> FilterByValue(@RequestParam int value, String category){
+    public List<Services> FilterByValue(@RequestParam int value, String category) {
         return servicesRepository.filterByValue(value, category);
+    }
+
+    @GetMapping("/filter/list")
+    public List<Services> FilterByProviderName(@RequestParam String providerName) {
+        return servicesRepository.filterByProviderName(providerName);
     }
 
     @DeleteMapping("/{id}")
     public void DeleteById(@PathVariable("id") String id) {
         servicesRepository.deleteById(id);
     }
+//
+//    @PostMapping
+//    public List<Services> updateTotalStars(@RequestParam Services services) {
+//        servicesRepository.save(services);
+//        return GetAll();
+//    }
 
 }
